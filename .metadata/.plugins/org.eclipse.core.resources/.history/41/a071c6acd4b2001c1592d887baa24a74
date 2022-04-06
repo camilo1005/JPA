@@ -1,0 +1,157 @@
+package controlador;
+
+
+
+import com.camilo.dao.*;
+
+import com.camilo.entidades.Persona;
+import com.camilo.entidades.Producto;
+
+
+import vista.gui.*;
+
+public class Coordinador {
+	VentanaPrincipal miVentanaPrincipal;
+	RegistrarPersonasGui miRegistrarPersonasGui;
+	RegistrarMascotasGui miRegistrarMascotasGui;
+	RegistrarProductosGui miRegistrarProductosGui;
+	ConsultarPersonaGui miConsultarPersonaGui;
+	PersonaDao miPersonaDao;
+	MascotaDao miMascotaDao;
+	ProductoDao miProductoDao;
+	TablaPersonasGui miTablaPersonasGui;
+	EliminarPersonaGui miEliminarPersonasGui;
+	ConsultarProductoGui miConsultarProductoGui;
+	EliminarProductoGui miEliminarProductoGui;
+	ConsultarMascotaGui miConsultarMascotaGui;
+	TablaMascotasGui miTablaMascotasGui;
+	TablaProductosGui miTablaProductosGui;
+	EliminarMascotaGui miEliminarMascotaGui;
+
+
+	public void setVentanaPrincipal(VentanaPrincipal miVentanaPrincipal) {
+		this.miVentanaPrincipal = miVentanaPrincipal;
+		
+	}
+
+
+	public void setRegistrarPersonasGui(RegistrarPersonasGui miRegistrarPersonasGui) {
+		this.miRegistrarPersonasGui = miRegistrarPersonasGui;
+		
+	}
+	
+
+	public void setRegistrarMascotasGui(RegistrarMascotasGui miRegistrarMascotasGui) {
+		this.miRegistrarMascotasGui=miRegistrarMascotasGui;
+	}
+
+	public void setRegistrarProductosGui(RegistrarProductosGui miRegistrarProductosGui) {
+		this.miRegistrarProductosGui=miRegistrarProductosGui;
+	}
+	
+	
+	public void setEliminarMascotGui(EliminarMascotaGui miEliminarMascotaGui) {
+		this.miEliminarMascotaGui=miEliminarMascotaGui;
+		
+	}
+	
+	public void setConsultarPersonaGui(ConsultarPersonaGui miConsultarPersonaGui) {
+		this.miConsultarPersonaGui=miConsultarPersonaGui;
+	}
+	
+	public void setConsultarmascota(ConsultarMascotaGui miConsultarMascotaGui) {
+		
+		this.miConsultarMascotaGui=miConsultarMascotaGui;
+	}
+	
+	public void setEliminarPersonaGui(EliminarPersonaGui miElimminarPersonaGui) {
+		this.miEliminarPersonasGui=miElimminarPersonaGui;
+		
+	}
+	
+
+	public void setPersonaDao(PersonaDao miPersonaDao) {
+		this.miPersonaDao=miPersonaDao;
+	}
+
+	public void setMascotaDao(MascotaDao miMascotaDao) {
+		this.miMascotaDao=miMascotaDao;
+	}
+
+
+
+	public void setProductoDao(ProductoDao miProductoDao) {
+		this.miProductoDao=miProductoDao;
+	}
+
+
+	public void setTablaPersonasGui(TablaPersonasGui miTablaPersonaGui) {
+		this.miTablaPersonasGui=miTablaPersonaGui;
+		
+	}
+
+
+	public void setConsultarProductoGui(ConsultarProductoGui miConsultarProducto) {
+		this.miConsultarProductoGui=miConsultarProducto;
+		
+	}
+
+
+	public void setEliminarProductoGui(EliminarProductoGui miEliminarProductoGui) {
+		this.miEliminarProductoGui=miEliminarProductoGui;
+		
+	}
+
+
+	public void setMiTablaMascotasGui(TablaMascotasGui miTablaMascotasGui) {
+		this.miTablaMascotasGui=miTablaMascotasGui;
+		
+	}
+
+
+	public void setTablaProductosGui(TablaProductosGui miTablaProductosGui) {
+		this.miTablaProductosGui=miTablaProductosGui;
+		
+	}
+
+
+	public void mostarVentanaRegistroPersona() {
+		miRegistrarPersonasGui.setVisible(true);
+		
+	}
+
+
+	public Long registrarNacimiento(Persona miPersona) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public String registrarPersona(Persona miPersona) {
+		return miPersonaDao.registrarPersona(miPersona);
+	}
+
+
+	public String registrarproductos(Producto miproducto) {
+		
+		try {
+			
+			 String p=miProductoDao.registrarProducto(miproducto);
+			
+			return p;
+		} catch (Exception e) {
+			System.out.println("fallo");
+			return miProductoDao.registrarProducto(miproducto);
+		}
+	
+		
+	}
+
+
+
+
+
+	
+	
+	
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;images&apos; to &apos;PruebaHibernateJPA/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;clinica_veterinaria&apos;&#x0D;&#x0A;- Destination element: &apos;PruebaHibernateJPA/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;clinica_veterinaria/src/images&apos;" description="Copy package" destination="=PruebaHibernateJPA/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src&lt;images" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1648758751971" version="1.0"/>
+</session>

@@ -1,0 +1,29 @@
+package controlador;
+
+
+import com.camilo.dao.*;
+
+import vista.gui.*;
+
+public class Relaciones {
+	VentanaPrincipal miVentanaPrincipal;
+	RegistrarPersonasGui miRegistrarPersonasGui;
+	RegistrarMascotasGui miRegistrarMascotasGui;
+	RegistrarProductosGui miRegistrarProductosGui;
+	Coordinador miCoordinador;
+	PersonaDao miPersonaDao;
+	MascotaDao miMascotaDao;
+	ProductoDao miProductoDao;
+	ConsultarPersonaGui miConsultaPersonaGui;
+	TablaPersonasGui miTablaPersonaGui;
+	EliminarPersonaGui miElimminarPersonaGui;
+	ConsultarProductoGui miConsultarProducto;
+	EliminarProductoGui miEliminarProductoGui;
+	ConsultarMascotaGui miConsultarMascotaGui;
+	TablaMascotasGui miTablaMascotasGui;
+	TablaProductosGui miTablaProductosGui;
+	EliminarMascotaGui miEliminarMascotaGui;
+	
+	
+	
+}

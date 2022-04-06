@@ -1,0 +1,357 @@
+package controlador;
+
+
+
+
+import modelo.dao.MascotaDao;
+
+
+import modelo.dao.NacimientoDao;
+import modelo.dao.PersonaDao;
+import modelo.dao.PersonaProductoDao;
+import modelo.dao.ProductoDao;
+import modelo.logica.Logica;
+import modelo.vo.MascotasVo;
+import modelo.vo.Nacimiento;
+import modelo.vo.PersonaVo;
+import modelo.vo.ProductoVo;
+import vista.gui.ConsultarMascotaGui;
+import vista.gui.ConsultarPersonaGui;
+import vista.gui.ConsultarProductoGui;
+import vista.gui.EliminarMascotaGui;
+import vista.gui.EliminarPersonaGui;
+import vista.gui.EliminarProductoGui;
+import vista.gui.RegistrarMascotasGui;
+import vista.gui.RegistrarPersonasGui;
+import vista.gui.RegistrarProductosGui;
+import vista.gui.TablaMascotasGui;
+import vista.gui.TablaPersonasGui;
+import vista.gui.TablaProductosGui;
+import vista.gui.VentanaPrincipal;
+
+public class Coordinador {
+	
+	VentanaPrincipal miVentanaPrincipal;
+	RegistrarPersonasGui miRegistrarPersonasGui;
+	RegistrarMascotasGui miRegistrarMascotasGui;
+	RegistrarProductosGui miRegistrarProductosGui;
+	ConsultarPersonaGui miConsultarPersonaGui;
+	PersonaDao miPersonaDao;
+	NacimientoDao miNacimientoDao;
+	MascotaDao miMascotaDao;
+	ProductoDao miProductoDao;
+	PersonaProductoDao miPersonaProductoDao;
+	Logica miLogica;
+	TablaPersonasGui miTablaPersonasGui;
+	EliminarPersonaGui miEliminarPersonasGui;
+	ConsultarProductoGui miConsultarProductoGui;
+	EliminarProductoGui miEliminarProductoGui;
+	ConsultarMascotaGui miConsultarMascotaGui;
+	TablaMascotasGui miTablaMascotasGui;
+	TablaProductosGui miTablaProductosGui;
+	EliminarMascotaGui miEliminarMascotaGui;
+	
+	
+	public void setVentanaPrincipal(VentanaPrincipal miVentanaPrincipal) {
+		this.miVentanaPrincipal=miVentanaPrincipal;		
+	}
+
+	public void setRegistrarPersonasGui(RegistrarPersonasGui miRegistrarPersonasGui) {
+		this.miRegistrarPersonasGui=miRegistrarPersonasGui;
+	}
+
+	public void setRegistrarMascotasGui(RegistrarMascotasGui miRegistrarMascotasGui) {
+		this.miRegistrarMascotasGui=miRegistrarMascotasGui;
+	}
+
+	public void setRegistrarProductosGui(RegistrarProductosGui miRegistrarProductosGui) {
+		this.miRegistrarProductosGui=miRegistrarProductosGui;
+	}
+	
+
+	public String EliminarMascota(MascotasVo miMascota) {
+		
+		return miMascotaDao.EliminarMascota(miMascota);
+	}
+
+	public void setEliminarMascotGui(EliminarMascotaGui miEliminarMascotaGui) {
+		this.miEliminarMascotaGui=miEliminarMascotaGui;
+		
+	}
+
+	public void mostrarVentanaEliminarMascota() {
+		miEliminarMascotaGui.setVisible(true);
+		
+	}
+	
+	public void setConsultarPersonaGui(ConsultarPersonaGui miConsultarPersonaGui) {
+		this.miConsultarPersonaGui=miConsultarPersonaGui;
+	}
+	
+	public void setConsultarmascota(ConsultarMascotaGui miConsultarMascotaGui) {
+		
+		this.miConsultarMascotaGui=miConsultarMascotaGui;
+	}
+	
+	public MascotasVo Buscarmascotas(long idmascotas) {
+		return miMascotaDao.BuscarMascota(idmascotas);
+	}
+
+	
+	public void mostrarVentanaConsultaMascota() {
+		miConsultarMascotaGui.setVisible(true);
+		
+	}
+	
+	public void setEliminarPersonaGui(EliminarPersonaGui miElimminarPersonaGui) {
+		this.miEliminarPersonasGui=miElimminarPersonaGui;
+		
+	}
+
+	public void setPersonaDao(PersonaDao miPersonaDao) {
+		this.miPersonaDao=miPersonaDao;
+	}
+
+	public void setMascotaDao(MascotaDao miMascotaDao) {
+		this.miMascotaDao=miMascotaDao;
+	}
+
+
+
+	public void setProductoDao(ProductoDao miProductoDao) {
+		this.miProductoDao=miProductoDao;
+	}
+
+	public void setPersonaProductoDao(PersonaProductoDao miPersonaProductoDao) {
+		this.miPersonaProductoDao=miPersonaProductoDao;
+	}
+	
+	public void setNacimientoDao(NacimientoDao miNacimientoDao) {
+		this.miNacimientoDao=miNacimientoDao;
+	}
+	
+	
+
+	
+	
+	
+
+	
+	public void setLogica(Logica miLogica) {
+		this.miLogica = miLogica; 
+		
+	}
+	
+
+	public void mostarVentanaRegistroPersona() {
+		miRegistrarPersonasGui.setVisible(true);
+		
+	}
+
+	public void mostrarVentanaRegistroMascotas() {
+		miRegistrarMascotasGui.setVisible(true);
+		
+	}
+	
+	public void mostrarVentanaEliminarPersonaGui() {
+		miEliminarPersonasGui.setVisible(true);
+		
+	}
+
+	public String registrarPersona(PersonaVo miPersona) {
+		return miPersonaDao.registrarPersona(miPersona);
+		
+	}
+	
+	public Long registrarNacimiento(PersonaVo miPersona) {
+		return miNacimientoDao.registrarNacimiento(miPersona.getNacimiento());
+	}
+
+	public void mostrarVentanaConsultarPersonas() {
+		miConsultarPersonaGui.setVisible(true);
+		
+	}
+	
+	public PersonaVo setConsultarPersona(long idDocumento) {
+		return miPersonaDao.consultarPersona(idDocumento);
+	}
+	
+	public MascotasVo setConsultarmascota(long idmascota) {
+		try {
+			
+			 MascotasVo p=miMascotaDao.consultarmascota(idmascota);
+			
+			return p;
+		} catch (Exception e) {
+			System.out.println("fallo");
+			return null;
+		}
+		//return miPersonaDao.consultarPersona(idDocumento);
+	}
+	
+	public Nacimiento consultarNacimiento(long idNacimiento) {
+		return miNacimientoDao.consultarNacimiento(idNacimiento);
+	}
+
+	public String actualizarPersona(PersonaVo miPersonaVo) {
+
+		return miPersonaDao.actulizaPersona(miPersonaVo);
+		
+	}
+
+	public boolean validarCampos(PersonaVo miPersonaVo) {
+		
+		return miLogica.VelidarCampos(miPersonaVo);
+	}
+
+	public String actualizaNacimiento(Nacimiento miNacimiento) {
+		
+		return miNacimientoDao.actualizarNacimiento(miNacimiento);
+		
+	}
+
+	public void mostrarVentanaListarPersona() {
+		
+		miTablaPersonasGui.setVisible(true);
+	}
+
+	public void setTablaPersonasGui(TablaPersonasGui miTablaPersonaGui) {
+		this.miTablaPersonasGui = miTablaPersonaGui;
+		
+	}
+
+	public long buscarNacimiento(PersonaVo miPersonaVo) {
+		return miPersonaDao.buscarNac(miPersonaVo);
+	}
+
+	public ArrayList<PersonaVo> ListarPersonaRegistradas() {
+		
+		return miPersonaDao.ListarPersonaRegistradas();
+	}
+
+	public ArrayList<Nacimiento> ListarNacimientosRegistrados() {
+
+		return miNacimientoDao.ListarNacimientosRegistrados();
+	}
+	
+	public String registrarmascotas(MascotasVo mimascota) {
+		
+		return miMascotaDao.registrarmascota(mimascota);
+		
+	}
+	
+	public String EliminarPersona(PersonaVo persona) {
+		
+		
+		return miPersonaDao.EliminarPersona(persona);
+	}
+
+	public String EliminarNacimiento(PersonaVo persona) {
+
+		return miNacimientoDao.EliminarNacimiento(persona);
+	}
+
+	public String registrarproductos(ProductoVo miproducto) {
+		
+		miProductoDao = new ProductoDao();
+		return miProductoDao.registrarproducto(miproducto);
+	}
+
+
+	public void setConsultarProductoGui(ConsultarProductoGui miConsultarProducto) {
+		this.miConsultarProductoGui=miConsultarProducto;
+		
+	}
+
+	public void setConsultarProductoGui() {
+		
+		miConsultarProductoGui.setVisible(true);
+	}
+
+
+
+	public String actualizarProducto(ProductoVo miproducto) {
+		
+		return miProductoDao.actualizarproducto(miproducto);
+	}
+
+	public void setEliminarProductoGui(EliminarProductoGui miEliminarProductoGui) {
+		this.miEliminarProductoGui=miEliminarProductoGui;
+		
+	}
+
+	public void mostrarVentanaEliminarProducto() {
+		miEliminarProductoGui.setVisible(true);
+		
+	}
+
+	public String EliminarProducto(ProductoVo productovo) {
+
+		return miProductoDao.eliminarproductos(productovo);
+	}
+
+	public void setMiTablaMascotasGui(TablaMascotasGui miTablaMascotasGui) {
+
+		this.miTablaMascotasGui  = miTablaMascotasGui;
+	}
+
+	public void setTablaProductosGui(TablaProductosGui miTablaProductosGui) {
+
+
+		this.miTablaProductosGui = miTablaProductosGui;
+		
+	}
+	
+
+	public ArrayList<MascotasVo> ListaMascotasregistradas() {
+		
+		try {
+			return miMascotaDao.ListarMascotas();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Ocurrio un error");
+			return null;
+		}
+		
+	}
+
+	public ArrayList<ProductoVo> ListarProductos() {
+
+		try {
+
+			return miProductoDao.listarProductos();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null,"Ocurrio un error");
+			return null;
+		}
+		
+		
+	}
+
+	public ArrayList<MascotasVo> DocumentosNacimiento() {
+		// TODO Auto-generated method stub
+		return miMascotaDao.DocumentosNacimiento();
+	}
+
+	public void mostrarTablaProductos() {
+		miTablaProductosGui.setVisible(true);
+		
+	}
+
+	public void mostraTablaMascotas() {
+		miTablaMascotasGui.setVisible(true);
+		
+	}
+	
+	
+
+	public ProductoVo ConsultarProductoGui(int idproduc) {
+		return miProductoDao.consultarproducto(idproduc);
+	}
+
+	public String EliminarMascotaIdDueno(PersonaVo persona) {
+		
+		return miMascotaDao.EliminarMascotaIdDueno(persona);
+	}
+
+	
+}

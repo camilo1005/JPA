@@ -1,0 +1,23 @@
+1647998136229	Copy file
+1647998162495	Rename resource 'pom.xml'
+1647998235351	Move file
+1647998522774	Delete element
+1648056110348	Move file
+1648056784272	Move file
+1648056828464	Delete element
+1648058385581	Rename resource 'presistence.xml'
+1648065229596	Delete element
+1648065362269	Rename type 'nacimient'
+1648065430061	Rename type 'persona'
+1648065438211	Rename type 'nacimiento'
+1648065686564	Rename type 'Aplicacion'
+1648065690327	Delete element
+1648065695810	Move compilation unit
+1648069120276	Rename package 'com.jefferson.aplicacion'
+1648069136188	Rename package 'com.jefferson.dao'
+1648073069655	Move compilation unit
+1648073073720	Move compilation unit
+1648073076960	Move compilation unit
+1648073081751	Delete element
+1648335593943	Rename type 'GestionarProducto'
+1648335630435	Rename type 'ProdcutoDao'
